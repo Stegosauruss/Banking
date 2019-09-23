@@ -29,5 +29,12 @@ describe('Bank', () => {
       bank.withdraw(30)
       expect(bank.balance).toBe(20)
     })
+
+    test('Raises an error when depositing less than 0', () => {
+      bank.deposit(50)
+      expect(() => {
+        bank.withdraw(-50)
+      }).toThrow('Error: withdrawal value must be greater than 0')
+    })
   })
 })
