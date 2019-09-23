@@ -6,7 +6,7 @@ describe('feature', () => {
     atm = new ATM()
   })
 
-  test('client can print a bank statement', () => {
+  test('user can print a bank statement', () => {
     //set date to 10/01/2012
     atm.deposit(1000)
     //set date to 13/01/2012
