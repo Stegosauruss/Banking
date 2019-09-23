@@ -4,7 +4,8 @@
   "description": "An app which can store deposits and withdrawals as well as printing off a bank statement.",
   "main": "bank.test.js",
   "dependencies": {
-    "jest": "^24.9.0"
+    "jest": "^24.9.0",
+    "mockdate": "^2.0.5"
   },
   "devDependencies": {
     "eslint": "^6.4.0",

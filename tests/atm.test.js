@@ -1,6 +1,6 @@
 const ATM = require('../lib/atm')
 
-xdescribe('ATM', () => {
+describe('ATM', () => {
   var atm
   beforeEach(() => {
     atm = new ATM()
