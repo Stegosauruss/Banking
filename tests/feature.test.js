@@ -10,7 +10,7 @@ describe('feature', () => {
   test('after a deposit of 50 a bank statement can be printed', () => {
     MockDate.set('2012-1-10')
     atm.deposit(50)
-    expect(atm.statement()).toBe(
+    expect(atm.printStatement()).toBe(
       'date || credit || debit || balance\n10/01/2012 || 50.00 || || 50.00'
     )
   })
@@ -22,7 +22,7 @@ describe('feature', () => {
     atm.deposit(2000)
     MockDate.set('2012-1-14')
     atm.withdrawal(500)
-    expect(atm.statement()).toBe(
+    expect(atm.printStatement()).toBe(
       'date || credit || debit || balance\n14/01/2012 || || 500.00 || 2500.00\n13/01/2012 || 2000.00 || || 3000.00\n10/01/2012 || 1000.00 || || 1000.00'
     )
   })
