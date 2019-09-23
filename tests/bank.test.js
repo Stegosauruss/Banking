@@ -13,11 +13,11 @@ describe('Bank', () => {
     })
   })
 
-  describe('#history', () => {
+  describe('#transactionHistory', () => {
     test('records a deposit of £50', () => {
       MockDate.set('2012-1-14')
       bank.deposit(50)
-      expect(bank.history).toEqual([
+      expect(bank.transactionHistory).toEqual([
         {
           date: '14/01/2012',
           credit: 50,
@@ -31,7 +31,7 @@ describe('Bank', () => {
       MockDate.set('2012-1-13')
       bank.deposit(50)
       bank.deposit(50)
-      expect(bank.history).toEqual([
+      expect(bank.transactionHistory).toEqual([
         {
           date: '13/01/2012',
           credit: 50,
@@ -51,7 +51,7 @@ describe('Bank', () => {
       MockDate.set('2012-1-14')
       bank.deposit(50)
       bank.withdraw(30)
-      expect(bank.history).toEqual([
+      expect(bank.transactionHistory).toEqual([
         {
           date: '14/01/2012',
           credit: 0,
