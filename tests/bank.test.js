@@ -24,6 +24,44 @@ describe('Bank', () => {
         }
       ])
     })
+
+    test('records two deposit of £50', () => {
+      bank.deposit(50)
+      bank.deposit(50)
+      expect(bank.history).toEqual([
+        {
+          date: "14/01/2012",
+          credit: 50,
+          debit: 0,
+          balance: 100
+        },
+        {
+          date: "14/01/2012",
+          credit: 50,
+          debit: 0,
+          balance: 50
+        }
+      ])
+    })
+
+    test('records a withdrawal of £50', () => {
+      bank.deposit(50)
+      bank.withdraw(30)
+      expect(bank.history).toEqual([
+        {
+          date: "14/01/2012",
+          credit: 0,
+          debit: 30,
+          balance: 20
+        },
+        {
+          date: "14/01/2012",
+          credit: 50,
+          debit: 0,
+          balance: 50
+        }
+      ])
+    })
   })
 
   describe('#Deposit', () => {
