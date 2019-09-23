@@ -1,4 +1,5 @@
 const Bank = require('../lib/bank')
+var MockDate = require('mockdate')
 
 describe('Bank', () => {
   var bank
@@ -14,6 +15,7 @@ describe('Bank', () => {
 
   describe('#history', () => {
     test('records a deposit of £50', () => {
+      MockDate.set('2012-1-14')
       bank.deposit(50)
       expect(bank.history).toEqual([
         {
@@ -26,17 +28,18 @@ describe('Bank', () => {
     })
 
     test('records two deposit of £50', () => {
+      MockDate.set('2012-1-13')
       bank.deposit(50)
       bank.deposit(50)
       expect(bank.history).toEqual([
         {
-          date: '14/01/2012',
+          date: '13/01/2012',
           credit: 50,
           debit: 0,
           balance: 100
         },
         {
-          date: '14/01/2012',
+          date: '13/01/2012',
           credit: 50,
           debit: 0,
           balance: 50
@@ -45,6 +48,7 @@ describe('Bank', () => {
     })
 
     test('records a withdrawal of £50', () => {
+      MockDate.set('2012-1-14')
       bank.deposit(50)
       bank.withdraw(30)
       expect(bank.history).toEqual([
