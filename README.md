@@ -43,12 +43,12 @@ npm run test
 ```
 Or to see coverage
 ```
-yarn test --coverage
+npm test -- --coverage
 ```
 
 Run linter using
 ```
-./node_modules/.bin/eslint .  
+eslint .  
 ```
 
 ## Domain Model
