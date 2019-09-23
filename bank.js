@@ -7,8 +7,14 @@ class Bank {
     return this._balance
   }
 
-  deposit (value) {
-    this._balance += value
+  deposit (funds) {
+    if (this._isNotPositive(funds)) throw new Error('Error: deposit value must be greater than 0')
+
+    this._balance += funds
+  }
+
+  _isNotPositive (funds) {
+    return funds <= 0
   }
 }
 

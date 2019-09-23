@@ -15,5 +15,11 @@ describe('Bank', () => {
       bank.deposit(50)
       expect(bank.balance).toBe(50)
     })
+
+    test('Raise an error when depositing less than 0', () => {
+      expect(() => {
+        bank.deposit(-50)
+      }).toThrow('Error: deposit value must be greater than 0')
+    })
   })
 })
