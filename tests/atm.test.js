@@ -7,13 +7,13 @@ xdescribe('ATM', () => {
   })
   describe('#Withdrawal', () => {
     test('Requests withdraw from bank', () => {
-      //assesses whether withdraw has been called on the bank mock
+      // assesses whether withdraw has been called on the bank mock
     })
   })
 
   describe('#Deposit', () => {
     test('Requests deposit from bank', () => {
-      //assesses whether withdraw has been called on the bank mock
+      // assesses whether withdraw has been called on the bank mock
     })
   })
 })

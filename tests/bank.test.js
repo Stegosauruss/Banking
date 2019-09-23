@@ -6,18 +6,18 @@ describe('Bank', () => {
     bank = new Bank()
   })
 
-  describe('#balance', () =>{
+  describe('#balance', () => {
     test('Initially set at 0', () => {
       expect(bank.balance).toBe(0)
     })
   })
 
-  describe('#history', () =>{
+  describe('#history', () => {
     test('records a deposit of £50', () => {
       bank.deposit(50)
       expect(bank.history).toEqual([
         {
-          date: "14/01/2012",
+          date: '14/01/2012',
           credit: 50,
           debit: 0,
           balance: 50
@@ -30,13 +30,13 @@ describe('Bank', () => {
       bank.deposit(50)
       expect(bank.history).toEqual([
         {
-          date: "14/01/2012",
+          date: '14/01/2012',
           credit: 50,
           debit: 0,
           balance: 100
         },
         {
-          date: "14/01/2012",
+          date: '14/01/2012',
           credit: 50,
           debit: 0,
           balance: 50
@@ -49,13 +49,13 @@ describe('Bank', () => {
       bank.withdraw(30)
       expect(bank.history).toEqual([
         {
-          date: "14/01/2012",
+          date: '14/01/2012',
           credit: 0,
           debit: 30,
           balance: 20
         },
         {
-          date: "14/01/2012",
+          date: '14/01/2012',
           credit: 50,
           debit: 0,
           balance: 50
