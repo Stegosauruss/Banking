@@ -30,11 +30,17 @@ describe('Bank', () => {
       expect(bank.balance).toBe(20)
     })
 
-    test('Raises an error when depositing less than 0', () => {
+    test('Raises an error when withdrawing less than 0', () => {
       bank.deposit(50)
       expect(() => {
         bank.withdraw(-50)
       }).toThrow('Error: withdrawal value must be greater than 0')
+    })
+
+    test('Raises an error when correct funds are unavailable', () => {
+      expect(() => {
+        bank.withdraw(50)
+      }).toThrow('Error: funds are not available')
     })
   })
 })
