@@ -1,4 +1,4 @@
-const Bank = require('./bank')
+const Bank = require('../lib/bank')
 
 describe('Bank', () => {
   var bank
@@ -16,10 +16,18 @@ describe('Bank', () => {
       expect(bank.balance).toBe(50)
     })
 
-    test('Raise an error when depositing less than 0', () => {
+    test('Raises an error when depositing less than 0', () => {
       expect(() => {
         bank.deposit(-50)
       }).toThrow('Error: deposit value must be greater than 0')
+    })
+  })
+
+  describe('#Withdraw', () => {
+    test('A user can withdraw £30 and it is reduced from the balance', () => {
+      bank.deposit(50)
+      bank.withdraw(30)
+      expect(bank.balance).toBe(20)
     })
   })
 })
