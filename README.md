@@ -1,6 +1,6 @@
 # Banking
 
-An app which can store deposits and withdrawals as well as printing off a bank statement.
+An app which can record deposits and withdrawals into a bank account as well as printing off a bank statement of past transactions.
 
 ## How to use
 run node
@@ -27,6 +27,7 @@ To print your statement use
 ```
 bank.printStatement()
 ```
+![Example Usage](./exampleUsage.png)
 
 ## User Stories
 
