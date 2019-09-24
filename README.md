@@ -68,7 +68,8 @@ I would like to see an error message when I try to withdraw money I do not have.
 ```
 
 ## Testing
-Run tests using
+Within the project folder Run:
+Tests using
 ```bash
 npm run test
 
@@ -78,7 +79,7 @@ Or to see coverage
 npm test -- --coverage
 ```
 
-Run linter using
+Run the linter using
 ```bash
 eslint .  
 ```
@@ -86,9 +87,10 @@ eslint .
 ## Domain Model
 I want to ensure that my classes have one responsibility. I originally began my domain model with two classes. An interface named ATM and a class called Bank which stored transaction history.
 
-
 When I was completing the logic required for printing a statement it became clear to me that ATM was picking up methods which could be stored somewhere else so I seperated out those methods into their own class.
 
 I realised that my atm was only acting as an interface and did not have any responsibilities of it's own so I removed it from my model. I also added a Day class to return the correct date format.
+
+After this change I realised that my Bank class has too many responsibilities. It stores the balance and also creates logs of transactions. I decided to seperate out the transactions into their own class.
 
 ![Domain Model](./bankDomainModel.png)

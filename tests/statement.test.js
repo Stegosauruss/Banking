@@ -7,16 +7,18 @@ describe('Statement', () => {
   })
   describe('#message', () => {
     test('returns a correctly formatted string', () => {
-      expect(statement.message([
+      const spy = jest.spyOn(console, 'log')
+      statement.message([
         {
           date: '14/01/2012',
           credit: 50,
           debit: 0,
           balance: 50
         }
-      ])).toBe(
-        'date || credit || debit || balance\n14/01/2012 || 50.00 || || 50.00'
-      )
+      ])
+      expect(spy.mock.calls[0][0]).toEqual('date || credit || debit || balance')
+      expect(spy.mock.calls[1][0]).toEqual('14/01/2012 || 50.00 || || 50.00')  
+      spy.mockClear() 
     })
   })
 })
