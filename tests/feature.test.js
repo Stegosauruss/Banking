@@ -9,6 +9,7 @@ describe('feature', () => {
 
   test('after a deposit of 50 a bank statement can be printed', () => {
     const spy = jest.spyOn(console, 'log')
+    spy.mockClear()
     MockDate.set('2012-1-10')
     bank.deposit(50)
     bank.printStatement()
@@ -19,6 +20,7 @@ describe('feature', () => {
 
   test('after two deposits of 1000 and 2000 and a withdrawal of 500 a statement can be printed', () => {
     const spy = jest.spyOn(console, 'log')
+    spy.mockClear()
     MockDate.set('2012-1-10')
     bank.deposit(1000)
     MockDate.set('2012-1-13')
