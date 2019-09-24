@@ -2,29 +2,41 @@
 
 An app which can record deposits and withdrawals into a bank account as well as printing off a bank statement of past transactions.
 
+## Installation
+download the repo into your Projects folder using:
+
+```bash
+git@github.com:Stegosauruss/Banking.git
+```
+change directory into the banking directory then run
+```bash
+npm install
+```
+to install dependencies.
+
 ## How to use
 run node
 ```bash
 node
 ```
 require the bank class
-```
+```node
 var Bank = require'./lib/bank.js'
 ```
 Create a new Bank
-```
+```node
 bank = new Bank()
 ```
 To make a withdrawal of £50 use
-```
+```node
 bank.withdraw(50)
 ```
 To make a deposit of £30 use
-```
+```node
 bank.deposit(30)
 ```
 To print your statement use
-```
+```node
 bank.printStatement()
 ```
 ![Example Usage](./exampleUsage.png)
@@ -44,37 +56,30 @@ I would like to make a withdrawal at a particular date.
 ```
 
 ```
-as a user,
+As a user,
 In order to see which transactions I have conducted,
 I would like to print a bank statement.
 ```
 
 ```
-as a user,
+As a user,
 In order to never go into a negative balance,
 I would like to see an error message when I try to withdraw money I do not have.
 ```
 
 ## Testing
-To install jest to your own machine run:
-```
-npm install --save-dev jest
-```
-to install dependencies.
-
 Run tests using
-
-```
+```bash
 npm run test
 
 ```
 Or to see coverage
-```
+```bash
 npm test -- --coverage
 ```
 
 Run linter using
-```
+```bash
 eslint .  
 ```
 
