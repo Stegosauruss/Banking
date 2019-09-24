@@ -17,8 +17,8 @@ describe('Statement', () => {
         }
       ])
       expect(spy.mock.calls[0][0]).toEqual('date || credit || debit || balance')
-      expect(spy.mock.calls[1][0]).toEqual('14/01/2012 || 50.00 || || 50.00')  
-      spy.mockClear() 
+      expect(spy.mock.calls[1][0]).toEqual('14/01/2012 || 50.00 || || 50.00')
+      spy.mockClear()
     })
   })
 })
