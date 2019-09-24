@@ -3,9 +3,12 @@ const Bank = require('../lib/bank')
 describe('Bank', () => {
   var bank
   beforeEach(() => {
+    var mockStatement = jest.fn()
+    mockStatement.message = jest.fn()
+
     var mockDay = jest.fn()
     mockDay.getDate = jest.fn(() => '14/01/2012')
-    bank = new Bank(mockDay)
+    bank = new Bank(mockDay, mockStatement)
   })
 
   describe('#balance', () => {
@@ -97,6 +100,13 @@ describe('Bank', () => {
       expect(() => {
         bank.withdraw(50)
       }).toThrow('Error: funds are not available')
+    })
+  })
+
+  describe('#printStatement', () => {
+    test('Requests deposit from bank', () => {
+      bank.printStatement()
+      expect(bank._statement.message).toHaveBeenCalled()
     })
   })
 })

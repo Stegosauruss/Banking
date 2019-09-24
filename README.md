@@ -7,25 +7,25 @@ run node
 ```bash
 node
 ```
-require the atm class
+require the bank class
 ```
-var ATM = require'./lib/atm.js'
+var Bank = require'./lib/bank.js'
 ```
-Create a new ATM
+Create a new Bank
 ```
-atm = new ATM()
+bank = new Bank()
 ```
 To make a withdrawal of £50 use
 ```
-atm.withdrawal(50)
+bank.withdraw(50)
 ```
 To make a deposit of £30 use
 ```
-atm.deposit(30)
+bank.deposit(30)
 ```
 To print your statement use
 ```
-atm.printStatement()
+bank.printStatement()
 ```
 
 ## User Stories
@@ -82,3 +82,7 @@ I want to ensure that my classes have one responsibility. I originally began my 
 
 
 When I was completing the logic required for printing a statement it became clear to me that ATM was picking up methods which could be stored somewhere else so I seperated out those methods into their own class.
+
+I realised that my atm was only acting as an interface and did not have any responsibilities of it's own so I removed it from my model. I also added a Day class to return the correct date format.
+
+![Domain Model](./bankDomainModel.png)
