@@ -6,7 +6,7 @@ An app which can record deposits and withdrawals into a bank account as well as 
 download the repo into your Projects folder using:
 
 ```bash
-git@github.com:Stegosauruss/Banking.git
+git clone git@github.com:Stegosauruss/Banking.git
 ```
 change directory into the banking directory then run
 ```bash
